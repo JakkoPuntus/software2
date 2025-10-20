@@ -1,6 +1,6 @@
 
 TYPE
-	DoorStates : 
+	DoorStates :
 		(
 		ST_INIT, (*Initialization of parameters and waiting for switching on of frequency converter*)
 		ST_UNKNOWN, (*Gates are in unknown state*)
@@ -13,16 +13,16 @@ TYPE
 		ST_DEC_POS, (*Slowing torwards opening*)
 		ST_DEC_NEG (*Slowing torwards closing*)
 		);
-	EtadCodes : 
+	EtadCodes :
 		(
 		STATE_DISABLED := 64,
-		CMD_SWITCHED_ON := 35,
+		STATE_SWITCHED_ON := 7,
 		STATE_READY := 33
 		);
-	CmddCodes : 
+	CmddCodes :
 		(
 		CMD_SHUTDOWN := 6,
-		STATE_SWITCHED_ON := 7,
+		CMD_SWITCHED_ON := 35,
 		CMD_ENABLED := 15
 		);
 END_TYPE
