@@ -7,7 +7,7 @@
 
 void _CYCLIC ProgramCyclic(void)
 {
-	DoorStaetMachine(&doorSM);
+	DoorStateMachine(&doorSM);
 	driveSM.speed = doorSM.speed;
 	DriveStateMachine(&driveSM);
 	ledSM.state = doorSM.state;

@@ -15,10 +15,10 @@ void LedStateMachine(struct LedStateMachine* inst)
 	{
 		case ST_INIT:
 			{
-				
+
 				break;
 			}
-		
+
 		case ST_UNKNOWN:
 			{
 				if(inst->timer%11==10)
@@ -30,13 +30,13 @@ void LedStateMachine(struct LedStateMachine* inst)
 				}
 				break;
 			}
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 		case ST_CLOSE:
 			{
 				inst->led1=1;
@@ -58,7 +58,7 @@ void LedStateMachine(struct LedStateMachine* inst)
 			{
 				inst->led1=1;
 				inst->led2=1;
-				if(inst->timer%21==20)
+				if(inst->timer%10==0)
 					inst->led3=!inst->led3;
 				inst->led4=0;
 				break;
@@ -66,14 +66,14 @@ void LedStateMachine(struct LedStateMachine* inst)
 		case ST_DEC_POS:
 			{
 				inst->led1=1;
-				if(inst->timer%21==20)
+				if(inst->timer%10==0)
 					inst->led2=!inst->led2;
 				inst->led3=0;
 				inst->led4=0;
 				break;
 			}
-		
-		
+
+
 		case ST_OPEN:
 			{
 				inst->led1=0;
@@ -82,7 +82,7 @@ void LedStateMachine(struct LedStateMachine* inst)
 				inst->led4=0;
 				break;
 			}
-		
+
 		case ST_ACC_NEG:
 			{
 				if(inst->timer%11==10)
@@ -95,34 +95,34 @@ void LedStateMachine(struct LedStateMachine* inst)
 		case ST_NEG:
 			{
 				inst->led1=1;
-				if(inst->timer%21==20)
+				if(inst->timer%10==0)
 					inst->led2=!inst->led2;
 				inst->led3=0;
 				inst->led4=0;
 				break;
 			}
-		
+
 		case ST_DEC_NEG:
 			{
 				inst->led1=1;
 				inst->led2=1;
-				if(inst->timer%21==20)
+				if(inst->timer%10==0)
 					inst->led3=!inst->led3;
 				inst->led4=0;
 				break;
-				
-			}
-		
-		
-		
-		
-		
-		
-		
-		
 
-		
-		
+			}
+
+
+
+
+
+
+
+
+
+
+
 	}
 	inst->timer++;
 }
